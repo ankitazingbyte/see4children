@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ngo.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @ngo.email %>
+</p>
+
+<p>
+  <strong>No of children:</strong>
+  <%= @ngo.no_of_children %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @ngo.area %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @ngo.state %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @ngo.city %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @ngo.zipcode %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @ngo.director %>
+</p>
+
+<p>
+  <strong>No of children:</strong>
+  <%= @ngo.no_of_children %>
+</p>
+
+<p>
+  <strong>No of staff:</strong>
+  <%= @ngo.no_of_staff %>
+</p>
+
+<p>
+<!--   <strong>Image:</strong>
+  <%#= @ngo.image %> -->
+</p>
+
+<%= link_to 'Edit', edit_ngo_path(@ngo) %> |
+<%= link_to 'Back', ngos_path %>
+
+<% @ngo.events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.date %></td>
+        <td><%= event.event_type %></td>
+        <td><%= event.place %></td>
+        <td><%= event.description %></td>
+        <td><%= event.organizer %></td>
+        <td><%#= event.image %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>

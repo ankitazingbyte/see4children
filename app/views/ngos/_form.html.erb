@@ -1,0 +1,67 @@
+<%= form_with(model: ngo, local: true) do |form| %>
+  <% if ngo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ngo.errors.count, "error") %> prohibited this ngo from being saved:</h2>
+
+      <ul>
+      <% ngo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :ngo_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :ngo_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area %>
+    <%= form.text_field :area, id: :ngo_area %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state, id: :ngo_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :ngo_city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.text_field :zipcode, id: :ngo_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :director %>
+    <%= form.text_field :director, id: :ngo_director %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_of_children %>
+    <%= form.number_field :no_of_children, id: :ngo_no_of_children %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_of_staff %>
+    <%= form.text_field :no_of_staff, id: :ngo_no_of_staff %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :ngo_image %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
